@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Heart Disease Prediction Result</h1>
+    <p>{{ result }}</p>
+
+    {% if result == "Possibility of heart disease" %}
+    <h2>Dietary Plan for Heart Disease Prevention:</h2>
+    <ul>
+        {% for item in diet_plan %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <a href="/">Go back</a>
+</body>
+</html>
